@@ -7,41 +7,82 @@ public class MovementControls : MonoBehaviour
 
     [SerializeField]
     float speed = 5f;
-
     [SerializeField]
-    Vector2 direction = new(0, 0);
+    float rotationSpeed = 5f;
     
+    [SerializeField, Header("For partial braking \ngets multiplied with linearvelocity Y")]
+    float partialBrakeAmount;
+    [SerializeField, Header("For full braking powah \ngets multiplied with linearvelocity Y")]
+    float fullBrakeAmount;
+
+    bool leftBrake = false;
+    bool rightBrake = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
+    public void Leftinput(InputAction.CallbackContext context)
+    {        
+        if (context.started) 
+        {
+            rb.AddRelativeTorque(new Vector3(0, 1, 0) * rotationSpeed, ForceMode.Force);            
+            if (leftBrake)
+            {
+                return;
+            }
 
-    /*
-    void FixedUpdate()
-    {
-        rb.AddRelativeForce(new Vector3(0, 0, direction.y) * speed, ForceMode.Force);
+            rb.AddRelativeForce(new Vector3(0, 0, 1) * speed, ForceMode.Force);
+        }  
     }
-    */
-    
-    public void LTinput(InputAction.CallbackContext context)
-    {
+    public void Rightinput(InputAction.CallbackContext context)
+    {        
         if (context.started) 
         {
+            rb.AddRelativeTorque(new Vector3(0, -1, 0) * rotationSpeed, ForceMode.Force);
+            if (rightBrake)
+            {
+                return;
+            }
+
             rb.AddRelativeForce(new Vector3(0, 0, 1) * speed, ForceMode.Force);
-            rb.AddRelativeTorque(new Vector3(0, 1, 0));
-            // direction.y = 0.5f;
-            // direction.x = 1f;
-        }   
+        }
     }
-    public void RTinput(InputAction.CallbackContext context)
+    public void LeftBrake(InputAction.CallbackContext context)
     {
-        if (context.started) 
+        if (context.started)
         {
-            rb.AddRelativeForce(new Vector3(0, 0, 1) * speed, ForceMode.Force);
-            rb.AddRelativeTorque(new Vector3(0, -1, 0));
-            // direction.y = 0.5f;
-            // direction.x = -1f;
-        }   
+            leftBrake = true;
+            BrakeCheck();
+        }
+        else if (context.canceled)
+        {
+            leftBrake = false;
+        }
+    }
+    public void RightBrake(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            rightBrake = true;
+            BrakeCheck();
+        }
+        else if (context.canceled)
+        {
+            rightBrake = false;
+        }
+    }
+    void BrakeCheck() 
+    {
+        if (leftBrake && rightBrake)
+        {
+            rb.linearVelocity *= fullBrakeAmount;
+            return;
+        }
+
+        if (leftBrake || rightBrake)
+        {
+            rb.linearVelocity *= partialBrakeAmount;
+        }        
     }
 }
