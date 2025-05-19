@@ -3,6 +3,7 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
     int Score;
+    float scoreLoss;
     void Start()
     {
         
@@ -11,11 +12,11 @@ public class ScoreManager : MonoBehaviour
    
     void Update()
     {
-        
+        Score -= (int)scoreLoss;
     }
 
    public void AddScore(int amount)
-    {
+   {
         Score += amount;
-    }
+   }
 }
