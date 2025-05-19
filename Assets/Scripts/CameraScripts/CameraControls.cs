@@ -13,8 +13,8 @@ public class CameraControls : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void FixedUpdate()
     {
-        transform.position = playerTransform.position + offset;
+        transform.position = Vector3.Lerp(transform.position, playerTransform.position + offset, 1);
     }
 }
