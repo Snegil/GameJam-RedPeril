@@ -1,5 +1,94 @@
 {
     "name": "Controls",
-    "maps": [],
+    "maps": [
+        {
+            "name": "Player",
+            "id": "d5f4b050-1646-4632-859c-a84b3fa37b45",
+            "actions": [
+                {
+                    "name": "LeftMovement",
+                    "type": "Button",
+                    "id": "edc4487c-e240-4cd0-a98d-a213bd5dc2b5",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "RightMovement",
+                    "type": "Button",
+                    "id": "173472f2-a8a2-4262-98b7-bf6cdb35b19a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "LeftBrake",
+                    "type": "Button",
+                    "id": "d4913bdf-5374-496f-b3f9-b23712c21cfa",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RightBrake",
+                    "type": "Button",
+                    "id": "0d6e3917-edd1-465b-80af-15dcac543b06",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "6f72d1cd-ce51-48f2-87f1-c395cab55a27",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftMovement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "da0646bf-9a0b-4bdf-9493-ca2a282d6e4e",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightMovement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8e31dc44-11f5-43eb-80fe-93bc4ed27ef5",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftBrake",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "88fad260-fd5c-4ab7-a982-6f3a1bb892b7",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightBrake",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
     "controlSchemes": []
 }
