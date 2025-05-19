@@ -13,4 +13,9 @@ public class ScoreManager : MonoBehaviour
     {
         
     }
+
+   public void AddScore(int amount)
+    {
+        Score += amount;
+    }
 }
