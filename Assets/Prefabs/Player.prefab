@@ -765,7 +765,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: -0.5
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -5187,8 +5187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d8fe3b3eba0ba546bc78b4ce47cc408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 128
-  rotationDegree: 15
+  speed: 256
+  rotationSpeed: 30
   partialBrakeAmount: 0.75
   fullBrakeAmount: 0.4
   rightRB: {fileID: 597345609281166887}
