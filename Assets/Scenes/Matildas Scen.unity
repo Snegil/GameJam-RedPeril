@@ -387,46 +387,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8721270146396977580, guid: 231ece860dd9a9b43b69f0fd97c4321b, type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8721270146396977580, guid: 231ece860dd9a9b43b69f0fd97c4321b, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_ActionId
-      value: 63d95d94-9b7d-4446-8a04-e9fc8ca71122
-      objectReference: {fileID: 0}
-    - target: {fileID: 8721270146396977580, guid: 231ece860dd9a9b43b69f0fd97c4321b, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_ActionName
-      value: 'Player/Reset[/Keyboard/space,/XInputControllerWindows/start]'
-      objectReference: {fileID: 0}
-    - target: {fileID: 8721270146396977580, guid: 231ece860dd9a9b43b69f0fd97c4321b, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8721270146396977580, guid: 231ece860dd9a9b43b69f0fd97c4321b, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8721270146396977580, guid: 231ece860dd9a9b43b69f0fd97c4321b, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1930297819}
-    - target: {fileID: 8721270146396977580, guid: 231ece860dd9a9b43b69f0fd97c4321b, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8721270146396977580, guid: 231ece860dd9a9b43b69f0fd97c4321b, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ResetButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 8721270146396977580, guid: 231ece860dd9a9b43b69f0fd97c4321b, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MovementControls, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8721270146396977580, guid: 231ece860dd9a9b43b69f0fd97c4321b, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1422,17 +1382,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1930297819 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2266196580788514516, guid: 231ece860dd9a9b43b69f0fd97c4321b, type: 3}
-  m_PrefabInstance: {fileID: 315800118}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d8fe3b3eba0ba546bc78b4ce47cc408, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1936009292
 PrefabInstance:
   m_ObjectHideFlags: 0
