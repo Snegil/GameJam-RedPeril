@@ -28,6 +28,9 @@ public class MovementControls : MonoBehaviour
     [SerializeField]
     bool flying = false;
 
+    [SerializeField]
+    GameObject[] wizardObjects;
+
     public void Leftinput(InputAction.CallbackContext context)
     {       
         if (groundCheck.GroundedCheck() == false && flying == false) 
@@ -114,6 +117,21 @@ public class MovementControls : MonoBehaviour
         if (rightBrake)
         {
             rightRB.linearVelocity *= partialBrakeAmount;
+        }
+    }
+    public void ToggleWizardMode(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            flying = !flying;
+            
+            if (wizardObjects.Length > 0)
+            {
+                foreach (GameObject obj in wizardObjects)
+                {
+                    obj.SetActive(flying);
+                }
+            }
         }
     }
 }

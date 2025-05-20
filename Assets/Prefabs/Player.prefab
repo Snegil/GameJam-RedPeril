@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5451494040696144877}
   m_Layer: 6
   m_Name: Right
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5051,7 +5051,7 @@ GameObject:
   - component: {fileID: 7656289708835414832}
   m_Layer: 6
   m_Name: Left
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5199,9 +5199,11 @@ GameObject:
   - component: {fileID: 5358135762125131882}
   - component: {fileID: 2266196580788514516}
   - component: {fileID: 8721270146396977580}
+  - component: {fileID: 7326552088532607052}
+  - component: {fileID: 486796338081937765}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5236,13 +5238,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 256
-  rotationSpeed: 30
+  rotationSpeed: 5
   partialBrakeAmount: 0.75
   fullBrakeAmount: 0.4
   rightRB: {fileID: 597345609281166887}
   leftRB: {fileID: 4253650132920200736}
   groundCheck: {fileID: 2062526001621980675}
-  flying: 1
+  flying: 0
+  wizardObjects: []
 --- !u!114 &8721270146396977580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5332,11 +5335,70 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 0d6e3917-edd1-465b-80af-15dcac543b06
     m_ActionName: Player/RightBrake
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2266196580788514516}
+        m_TargetAssemblyTypeName: MovementControls, Assembly-CSharp
+        m_MethodName: ToggleWizardMode
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 700e355f-a903-4dba-a51f-2fe783f0cd5c
+    m_ActionName: 'Player/WizardCore[/Keyboard/w,/XInputControllerWindows/select]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!54 &7326552088532607052
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8450813525505438846}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!138 &486796338081937765
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8450813525505438846}
+  serializedVersion: 1
+  m_ConnectedBody: {fileID: 597345609281166887}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1001 &1717764876691362870
 PrefabInstance:
   m_ObjectHideFlags: 0
