@@ -3,6 +3,9 @@ using UnityEngine;
 public class WinObject : MonoBehaviour
 {
     public HighScore highScore;
+    [SerializeField]
+    SceneTransition sceneTransition;
+
     void Start()
     {
         
@@ -15,9 +18,11 @@ public class WinObject : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.CompareTag("Player"))
         {
             highScore.GetScore();
+            StartCoroutine(sceneTransition.ChangeSceneCoroutine("MainMenu", 5f));
+            //sceneTransition.ChangeScene("MainMenu");
             Debug.Log("Klarade banan");
         }
     }

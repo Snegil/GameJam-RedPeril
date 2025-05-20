@@ -9,9 +9,6 @@ public class GetHighScoreForMM : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (PlayerPrefs.HasKey("HighScore"))
-        {
-            highScoreText.text = PlayerPrefs.GetFloat("HighScore").ToString();
-        }
+        highScoreText.text = "HIGHSCORE\n" + PlayerPrefs.GetFloat("HighScore", 10).ToString();
     }
 }

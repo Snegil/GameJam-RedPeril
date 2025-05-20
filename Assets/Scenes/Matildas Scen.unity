@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highScore: {fileID: 1448854199}
+  sceneTransition: {fileID: 59676511}
 --- !u!136 &59676510
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -160,6 +161,18 @@ CapsuleCollider:
   m_Height: 6.354153
   m_Direction: 1
   m_Center: {x: -0.27952337, y: -0.09463309, z: 0.59221613}
+--- !u!114 &59676511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59676508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7945cadf1651fc84b89deae4e5139cab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &111517652
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -765,6 +778,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 61308c7351e99e04382d9183dc71a573, type: 3}
       insertIndex: -1
       addedObject: {fileID: 59676509}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 61308c7351e99e04382d9183dc71a573, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 59676511}
   m_SourcePrefab: {fileID: 100100000, guid: 61308c7351e99e04382d9183dc71a573, type: 3}
 --- !u!1 &1448854195
 GameObject:
@@ -842,6 +858,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 1448854196}
   highscore: {fileID: 1949645416}
+  sceneTransition: {fileID: 0}
 --- !u!4 &1493900551 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2927811754784883699, guid: 6410814820546144c9deff2e3339a14f, type: 3}
