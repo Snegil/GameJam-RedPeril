@@ -8,6 +8,10 @@ public class HighScore : MonoBehaviour
     float score;
     public Timer timer;
     [SerializeField] TextMeshProUGUI highscore;
+
+    [SerializeField]
+    SceneTransition sceneTransition;
+    
     private void Start()
     {       
         highscore.text = PlayerPrefs.GetFloat("HighScore", 1000).ToString();

@@ -11,4 +11,11 @@ public class SceneTransition : MonoBehaviour
         Time.timeScale = 1.0f;
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
+    public IEnumerator ChangeSceneCoroutine(string sceneName, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        AudioListener.pause = false;
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+    }
 }

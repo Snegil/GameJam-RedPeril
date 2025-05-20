@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class MovementControls : MonoBehaviour
 {
@@ -132,6 +133,15 @@ public class MovementControls : MonoBehaviour
                     obj.SetActive(flying);
                 }
             }
+        }
+    }
+    public void ResetButton(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            AudioListener.pause = false;
+            Time.timeScale = 1.0f;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
         }
     }
 }
