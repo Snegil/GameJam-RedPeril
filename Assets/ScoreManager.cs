@@ -1,9 +1,11 @@
+using TMPro;
 using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
     int Score;
-    float scoreLoss;
+  
+    public Timer timer;
     void Start()
     {
         
@@ -12,11 +14,11 @@ public class ScoreManager : MonoBehaviour
    
     void Update()
     {
-        Score -= (int)scoreLoss;
+       
     }
 
    public void AddScore(int amount)
    {
-        Score += amount;
+      timer.sekunder -= amount;
    }
 }

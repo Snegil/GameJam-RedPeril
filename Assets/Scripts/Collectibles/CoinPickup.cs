@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class CoinPickup : MonoBehaviour
 {
-    int Value;
-   public ScoreManager scoreManager;
+    public int Value;
+    public ScoreManager scoreManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,6 +21,7 @@ public class CoinPickup : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             scoreManager.AddScore(Value);
+            gameObject.SetActive(false);
         }
     }
    

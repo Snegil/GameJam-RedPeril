@@ -4,8 +4,8 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     int timmar;
-    int minuter;
-    float sekunder;
+    public int minuter;
+    public float sekunder;
     float millisekunder;
     
     [SerializeField] TextMeshProUGUI timerText;
@@ -30,6 +30,7 @@ public class Timer : MonoBehaviour
             }
             sekunder = 0;
         }    
-        timerText.text = (timmar + (minuter + (":") +Mathf.RoundToInt(sekunder)).ToString());
+        timerText.text = (timmar + (minuter + (":") + Mathf.RoundToInt(sekunder)).ToString());
+      
     }
 }
