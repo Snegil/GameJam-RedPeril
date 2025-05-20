@@ -98,9 +98,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 480993498728647297}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 1001
   m_Drag: 0
-  m_AngularDrag: 0
+  m_AngularDrag: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -5132,9 +5132,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7626614265775808703}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 1001
   m_Drag: 0
-  m_AngularDrag: 0
+  m_AngularDrag: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -5252,6 +5252,10 @@ MonoBehaviour:
   colours:
   - {r: 0.84313726, g: 0.84313726, b: 0.84313726, a: 1}
   - {r: 0.735849, g: 0.2256141, b: 0.6478086, a: 1}
+  audioSource: {fileID: 0}
+  brakingOneSide: {fileID: 0}
+  brakingBothSides: {fileID: 0}
+  wizardModeOn: {fileID: 0}
 --- !u!114 &8721270146396977580
 MonoBehaviour:
   m_ObjectHideFlags: 0
