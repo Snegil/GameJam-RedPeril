@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 597345609281166887}
   - component: {fileID: 3151688747558471318}
   - component: {fileID: 5451494040696144877}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Right
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 5620864379975957766}
   - component: {fileID: 1352564521488755591}
   - component: {fileID: 6590192966862451507}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4987,6 +4987,54 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &5555987351685659763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 827752810320199405}
+  - component: {fileID: 2062526001621980675}
+  m_Layer: 6
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &827752810320199405
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5555987351685659763}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1178820984659620829}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2062526001621980675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5555987351685659763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4762aba01c0db14fb222d6fe23cd1fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 55
 --- !u!1 &7626614265775808703
 GameObject:
   m_ObjectHideFlags: 0
@@ -5001,9 +5049,9 @@ GameObject:
   - component: {fileID: 4253650132920200736}
   - component: {fileID: 4657007010208071829}
   - component: {fileID: 7656289708835414832}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Left
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5151,7 +5199,7 @@ GameObject:
   - component: {fileID: 5358135762125131882}
   - component: {fileID: 2266196580788514516}
   - component: {fileID: 8721270146396977580}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5193,6 +5241,8 @@ MonoBehaviour:
   fullBrakeAmount: 0.4
   rightRB: {fileID: 597345609281166887}
   leftRB: {fileID: 4253650132920200736}
+  groundCheck: {fileID: 2062526001621980675}
+  flying: 1
 --- !u!114 &8721270146396977580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5335,17 +5385,60 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3926512192568768717, guid: 0a6857d55eac1bd41a443854caadf0cd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -2865531955883408593, guid: 0a6857d55eac1bd41a443854caadf0cd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -2800776532370278988, guid: 0a6857d55eac1bd41a443854caadf0cd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -1296099045861304977, guid: 0a6857d55eac1bd41a443854caadf0cd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -975565306793113027, guid: 0a6857d55eac1bd41a443854caadf0cd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0a6857d55eac1bd41a443854caadf0cd, type: 3}
       propertyPath: m_Name
       value: red peril
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0a6857d55eac1bd41a443854caadf0cd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0a6857d55eac1bd41a443854caadf0cd, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155030223217676753, guid: 0a6857d55eac1bd41a443854caadf0cd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836950635362505924, guid: 0a6857d55eac1bd41a443854caadf0cd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5183624906428854684, guid: 0a6857d55eac1bd41a443854caadf0cd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054119658827611720, guid: 0a6857d55eac1bd41a443854caadf0cd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0a6857d55eac1bd41a443854caadf0cd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 827752810320199405}
     - targetCorrespondingSourceObject: {fileID: -5968333704131634894, guid: 0a6857d55eac1bd41a443854caadf0cd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5620864379975957766}
