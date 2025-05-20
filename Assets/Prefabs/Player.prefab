@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5451494040696144877}
   m_Layer: 6
   m_Name: Right
-  m_TagString: Untagged
+  m_TagString: Right
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5051,7 +5051,7 @@ GameObject:
   - component: {fileID: 7656289708835414832}
   m_Layer: 6
   m_Name: Left
-  m_TagString: Untagged
+  m_TagString: Left
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5248,6 +5248,10 @@ MonoBehaviour:
   wizardObjects:
   - {fileID: 2501696890629792163}
   - {fileID: 1586230741835748586}
+  particleMaterial: {fileID: 2100000, guid: f086586c6b368ad4db2d68efe89b400f, type: 2}
+  colours:
+  - {r: 0.84313726, g: 0.84313726, b: 0.84313726, a: 1}
+  - {r: 0.735849, g: 0.2256141, b: 0.6478086, a: 1}
 --- !u!114 &8721270146396977580
 MonoBehaviour:
   m_ObjectHideFlags: 0

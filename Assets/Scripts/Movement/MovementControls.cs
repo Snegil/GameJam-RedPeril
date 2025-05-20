@@ -32,6 +32,24 @@ public class MovementControls : MonoBehaviour
     [SerializeField]
     GameObject[] wizardObjects;
 
+    [SerializeField]
+    Material particleMaterial;
+
+    [SerializeField]
+    Color[] colours;
+
+    [SerializeField, Header("AUDIO THINGIES")]
+    AudioSource audioSource;
+
+    [Space, SerializeField]
+    AudioClip brakingOneSide;
+    [SerializeField]
+    AudioClip brakingBothSides;
+
+    [Space, SerializeField]
+    AudioClip wizardModeOn;
+    
+
     public void Leftinput(InputAction.CallbackContext context)
     {       
         if (groundCheck.GroundedCheck() == false && flying == false) 
@@ -108,16 +126,19 @@ public class MovementControls : MonoBehaviour
         {
             leftRB.linearVelocity *= fullBrakeAmount;
             rightRB.linearVelocity *= fullBrakeAmount;
+            audioSource.PlayOneShot(brakingBothSides);
             return;
         }
 
         if (leftBrake)
         {
             leftRB.linearVelocity *= partialBrakeAmount;
+            audioSource.PlayOneShot(brakingOneSide);
         }        
         if (rightBrake)
         {
             rightRB.linearVelocity *= partialBrakeAmount;
+            audioSource.PlayOneShot(brakingOneSide);
         }
     }
     public void ToggleWizardMode(InputAction.CallbackContext context)
@@ -125,7 +146,9 @@ public class MovementControls : MonoBehaviour
         if (context.started)
         {
             flying = !flying;
-            
+
+            particleMaterial.color = flying ? colours[1] : colours[0];
+            audioSource.PlayOneShot(wizardModeOn);
             if (wizardObjects.Length > 0)
             {
                 foreach (GameObject obj in wizardObjects)
