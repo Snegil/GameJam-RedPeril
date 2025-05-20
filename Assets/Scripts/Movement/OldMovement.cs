@@ -1,12 +1,15 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class MovementControls : MonoBehaviour
+public class OldMovement : MonoBehaviour
 {
+
+    Rigidbody rb;
+
     [SerializeField]
     float speed = 5f;
     [SerializeField]
-    float rotationSpeed = 15f;
+    float rotationSpeed = 5f;
     
     [SerializeField, Header("For partial braking \ngets multiplied with linearvelocity Y")]
     float partialBrakeAmount;
@@ -16,37 +19,34 @@ public class MovementControls : MonoBehaviour
     bool leftBrake = false;
     bool rightBrake = false;
 
-    [Space, SerializeField, Header("--------------------")]
-    Rigidbody rightRB;
-    
-    [SerializeField]
-    Rigidbody leftRB;
-
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
     public void Leftinput(InputAction.CallbackContext context)
     {        
         if (context.started) 
         {
-            leftRB.AddRelativeTorque(new Vector3(0, 1, 0) * rotationSpeed, ForceMode.Force);            
+            rb.AddRelativeTorque(new Vector3(0, 1, 0) * rotationSpeed, ForceMode.Force);            
             if (leftBrake)
             {
                 return;
             }
 
-            leftRB.AddRelativeForce(new Vector3(0, 0, 1) * speed, ForceMode.Force);
+            rb.AddRelativeForce(new Vector3(0, 0, 1) * speed, ForceMode.Force);
         }  
     }
     public void Rightinput(InputAction.CallbackContext context)
     {        
         if (context.started) 
         {
-            rightRB.AddRelativeTorque(new Vector3(0, -1, 0) * rotationSpeed, ForceMode.Force);
-            
+            rb.AddRelativeTorque(new Vector3(0, -1, 0) * rotationSpeed, ForceMode.Force);
             if (rightBrake)
             {
                 return;
             }
 
-            rightRB.AddRelativeForce(new Vector3(0, 0, 1) * speed, ForceMode.Force);
+            rb.AddRelativeForce(new Vector3(0, 0, 1) * speed, ForceMode.Force);
         }
     }
     public void LeftBrake(InputAction.CallbackContext context)
@@ -77,18 +77,13 @@ public class MovementControls : MonoBehaviour
     {
         if (leftBrake && rightBrake)
         {
-            leftRB.linearVelocity *= fullBrakeAmount;
-            rightRB.linearVelocity *= fullBrakeAmount;
+            rb.linearVelocity *= fullBrakeAmount;
             return;
         }
 
-        if (leftBrake)
+        if (leftBrake || rightBrake)
         {
-            leftRB.linearVelocity *= partialBrakeAmount;
+            rb.linearVelocity *= partialBrakeAmount;
         }        
-        if (rightBrake)
-        {
-            rightRB.linearVelocity *= partialBrakeAmount;
-        }
     }
 }
