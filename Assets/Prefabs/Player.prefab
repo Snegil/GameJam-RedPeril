@@ -5247,6 +5247,7 @@ MonoBehaviour:
   flying: 0
   wizardObjects:
   - {fileID: 2501696890629792163}
+  - {fileID: 1586230741835748586}
 --- !u!114 &8721270146396977580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5352,6 +5353,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 700e355f-a903-4dba-a51f-2fe783f0cd5c
     m_ActionName: 'Player/WizardCore[/Keyboard/w,/XInputControllerWindows/select]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2266196580788514516}
+        m_TargetAssemblyTypeName: MovementControls, Assembly-CSharp
+        m_MethodName: ResetButton
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 63d95d94-9b7d-4446-8a04-e9fc8ca71122
+    m_ActionName: 'Player/Reset[/Keyboard/space,/XInputControllerWindows/start]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -5503,6 +5520,9 @@ PrefabInstance:
       insertIndex: 0
       addedObject: {fileID: 3025293865176300313}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0a6857d55eac1bd41a443854caadf0cd, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 2110144061328117328}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0a6857d55eac1bd41a443854caadf0cd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 827752810320199405}
     - targetCorrespondingSourceObject: {fileID: -5968333704131634894, guid: 0a6857d55eac1bd41a443854caadf0cd, type: 3}
@@ -5519,6 +5539,81 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: -5968333704131634894, guid: 0a6857d55eac1bd41a443854caadf0cd, type: 3}
   m_PrefabInstance: {fileID: 1717764876691362870}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1928109798824454587
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1178820984659620829}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 6afec80bdb69f9b44b0866ed16de4e9f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.343
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6afec80bdb69f9b44b0866ed16de4e9f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.226
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6afec80bdb69f9b44b0866ed16de4e9f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.98
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6afec80bdb69f9b44b0866ed16de4e9f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6afec80bdb69f9b44b0866ed16de4e9f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000021855694
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6afec80bdb69f9b44b0866ed16de4e9f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6afec80bdb69f9b44b0866ed16de4e9f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6afec80bdb69f9b44b0866ed16de4e9f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6afec80bdb69f9b44b0866ed16de4e9f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6afec80bdb69f9b44b0866ed16de4e9f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 6afec80bdb69f9b44b0866ed16de4e9f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e3b94bf403cef6f46821cb78e6fbca76, type: 2}
+    - target: {fileID: 919132149155446097, guid: 6afec80bdb69f9b44b0866ed16de4e9f, type: 3}
+      propertyPath: m_Name
+      value: wizard broom
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6afec80bdb69f9b44b0866ed16de4e9f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6afec80bdb69f9b44b0866ed16de4e9f, type: 3}
+--- !u!1 &1586230741835748586 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6afec80bdb69f9b44b0866ed16de4e9f, type: 3}
+  m_PrefabInstance: {fileID: 1928109798824454587}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2110144061328117328 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6afec80bdb69f9b44b0866ed16de4e9f, type: 3}
+  m_PrefabInstance: {fileID: 1928109798824454587}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3348067609994927346
 PrefabInstance:
