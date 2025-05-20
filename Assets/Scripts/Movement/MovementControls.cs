@@ -22,8 +22,19 @@ public class MovementControls : MonoBehaviour
     [SerializeField]
     Rigidbody leftRB;
 
+    [SerializeField]
+    GroundCheck groundCheck;
+
+    [SerializeField]
+    bool flying = false;
+
     public void Leftinput(InputAction.CallbackContext context)
-    {        
+    {       
+        if (groundCheck.GroundedCheck() == false && flying == false) 
+        {
+            return;
+        }
+
         if (context.started) 
         {
             leftRB.AddRelativeTorque(new Vector3(0, 1, 0) * rotationSpeed, ForceMode.Force);            
@@ -37,6 +48,10 @@ public class MovementControls : MonoBehaviour
     }
     public void Rightinput(InputAction.CallbackContext context)
     {        
+        if (groundCheck.GroundedCheck() == false && flying == false) 
+        {
+            return;
+        }
         if (context.started) 
         {
             rightRB.AddRelativeTorque(new Vector3(0, -1, 0) * rotationSpeed, ForceMode.Force);
@@ -51,6 +66,11 @@ public class MovementControls : MonoBehaviour
     }
     public void LeftBrake(InputAction.CallbackContext context)
     {
+        if (groundCheck.GroundedCheck() == false && flying == false) 
+        {
+            return;
+        }
+
         if (context.started)
         {
             leftBrake = true;
@@ -63,6 +83,11 @@ public class MovementControls : MonoBehaviour
     }
     public void RightBrake(InputAction.CallbackContext context)
     {
+        if (groundCheck.GroundedCheck() == false && flying == false) 
+        {
+            return;
+        }
+
         if (context.started)
         {
             rightBrake = true;
