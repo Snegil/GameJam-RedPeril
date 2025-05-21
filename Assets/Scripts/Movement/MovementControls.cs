@@ -33,10 +33,10 @@ public class MovementControls : MonoBehaviour
     GameObject[] wizardObjects;
 
     [SerializeField]
-    Material particleMaterial;
+    ParticleSystem pSystem;
 
     [SerializeField]
-    Color[] colours;
+    ParticleSystem wizardPSystem;
 
     [SerializeField, Header("AUDIO THINGIES")]
     AudioSource audioSource;
@@ -147,7 +147,17 @@ public class MovementControls : MonoBehaviour
         {
             flying = !flying;
 
-            particleMaterial.color = flying ? colours[1] : colours[0];
+            if (flying)
+            {
+                wizardPSystem.Play();
+                pSystem.Stop();
+            }
+            else
+            {
+                wizardPSystem.Stop();
+                pSystem.Play();
+            }
+            //particleMaterial.color = flying ? colours[1] : colours[0];
             audioSource.PlayOneShot(wizardModeOn);
             if (wizardObjects.Length > 0)
             {
