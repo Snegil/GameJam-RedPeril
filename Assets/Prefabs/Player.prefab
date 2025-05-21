@@ -10208,6 +10208,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 63d95d94-9b7d-4446-8a04-e9fc8ca71122
     m_ActionName: 'Player/Reset[/Keyboard/space,/XInputControllerWindows/start]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2266196580788514516}
+        m_TargetAssemblyTypeName: MovementControls, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 64f5e128-f42d-4e61-be09-f285026f8ca8
+    m_ActionName: 'Player/Quit[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

@@ -177,4 +177,11 @@ public class MovementControls : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
         }
     }
+    public void QuitGame(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            Application.Quit();
+        }
+    }
 }
